@@ -63,6 +63,20 @@ namespace MyPhotoshop {
         public static Pixel operator *(double value, Pixel p) {
             return p * value;
         }
-
+        public static Pixel operator *(Pixel first, Pixel second) {
+            var r = first.ChanelR * second.ChanelR;
+            var g = first.ChanelG * second.ChanelG;
+            var b = first.ChanelB * second.ChanelB;
+            return new Pixel(r,g,b );
+        }
+        public static Pixel operator / (Pixel first, double second) {
+            var r = first.ChanelR / second;
+            var g = first.ChanelG / second;
+            var b = first.ChanelB / second;
+            return new Pixel(r, g, b);
+        }
+        public static Pixel operator /( double second, Pixel first) {
+            return first / second;
+        }
     }
 }
