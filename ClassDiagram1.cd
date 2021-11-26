@@ -1,28 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="MyPhotoshop.Convertors" Collapsed="true">
-    <Position X="1" Y="0.75" Width="1.5" />
+  <Class Name="MyPhotoshop.PixelFilter" Collapsed="true">
+    <Position X="5.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\Convertors.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAAAgAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Filters\PixelFilter.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="MyPhotoshop.Photo" Collapsed="true">
-    <Position X="3.75" Y="0.5" Width="1.5" />
+  <Class Name="MyPhotoshop.LighteningFilter" Collapsed="true">
+    <Position X="1.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAQAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\Photo.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Filters\LighteningFilter.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="MyPhotoshop.Pixel" Collapsed="true">
-    <Position X="6" Y="0.5" Width="1.5" />
+  <Class Name="MyPhotoshop.GrayScaleFilter" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Data\Pixel.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAEAAAAAAAAAAAAAAAIAQABgAAAAAA=</HashCode>
+      <FileName>Filters\GrayScaleFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MyPhotoshop.ParameterInfo" Collapsed="true">
+    <Position X="10.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAIAAAAAQAAABAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Filters\ParameterInfo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="MyPhotoshop.IFilter" Collapsed="true">
-    <Position X="10.25" Y="2.25" Width="1.5" />
+    <Position X="10.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Filters\IFilter.cs</FileName>
