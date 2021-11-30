@@ -39,7 +39,12 @@
   <ItemGroup>
     <Compile Include="Data\Pixel.cs" />
     <Compile Include="Filters\GrayScaleFilter.cs" />
+    <Compile Include="Filters\Parametres\EmptyParametres.cs" />
+    <Compile Include="Filters\Parametres\GrayScaleParametres.cs" />
+    <Compile Include="Filters\Parametres\IParametres.cs" />
+    <Compile Include="Filters\Parametres\LighteningParametres.cs" />
     <Compile Include="Filters\ParameterInfo.cs" />
+    <Compile Include="Filters\ParametrizedFilter.cs" />
     <Compile Include="Filters\PixelFilter.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Window\MainWindow.cs">
