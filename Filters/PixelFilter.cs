@@ -4,21 +4,30 @@ using System.Linq;
 using System.Text;
 
 namespace MyPhotoshop {
-    public abstract class PixelFilter<TParam>: ParametrizedFilter<TParam>
+    public class PixelFilter<TParam>: ParametrizedFilter<TParam>
         where TParam: IParametres, new()
     {
+        public readonly string FilterName;
+        Func<Pixel, TParam, Pixel> ProcessPixel;
 
-        public abstract Pixel ProcessPixel(Pixel pixel, TParam parametres);
+        public PixelFilter(string nameFilter, Func<Pixel, TParam, Pixel> processPixel) {
+            FilterName = nameFilter;
+            ProcessPixel = processPixel;
+        }
 
         public override Photo Process(Photo original, TParam parameters) {
             
             var photo = new Photo(original.width, original.height);
             
             for (int x = 0; x < original.width; x++) 
-                for (int y = 0; y < original.height; y++) 
+                for (int y = 0; y < original.height; y++)
                     photo[x, y] = ProcessPixel(original[x, y], parameters);
             
             return photo;
+        }
+
+        public override string ToString() {
+            return FilterName;
         }
     }
 }
