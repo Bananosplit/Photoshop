@@ -4,26 +4,21 @@ using System.Linq;
 using System.Text;
 
 namespace MyPhotoshop {
-    public abstract class ParametrizedFilter: IFilter {
-
-        IParametres parametres;
-
-        public ParametrizedFilter(IParametres parametres) {
-            this.parametres = parametres;
-        }
+    public abstract class ParametrizedFilter<TParams>: IFilter
+        where TParams: IParametres, new() 
+    {
 
         public  ParameterInfo[] GetParameters() {
-            return parametres.GetDescription();
+            return new TParams().GetDescription();
         }
-
 
         public Photo Process(Photo original, double[] values) {
-            this.parametres.Parse(values);
-            return Process(original, this.parametres);
-            
+            var parametres = new TParams();
+            parametres.Parse(values);
+            return Process(original, parametres);
         }
 
-        public abstract Photo Process(Photo original, IParametres parametres);
+        public abstract Photo Process(Photo original, TParams parametres);
         
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 
 namespace MyPhotoshop {
-    public class GrayScaleFilter : PixelFilter ,IFilter {
+    public class GrayScaleFilter : PixelFilter<GrayScaleParametres> { 
 
-        public GrayScaleFilter() :base(new GrayScaleParametres()) { }
+      //  public GrayScaleFilter() :base(new GrayScaleParametres()) { }
 
         private readonly double r = 0.299;
         private readonly double g = 0.587;
@@ -17,7 +17,7 @@ namespace MyPhotoshop {
             return "Оттенки серого";
         }
 
-        public override Pixel ProcessPixel(Pixel pixel, IParametres parameters) {
+        public override Pixel ProcessPixel(Pixel pixel, GrayScaleParametres parameters) {
             var r = pixel.ChanelR * this.r;
             var g = pixel.ChanelG * this.g;
             var b = pixel.ChanelB * this.b;

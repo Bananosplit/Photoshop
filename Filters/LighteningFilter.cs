@@ -3,12 +3,11 @@ using System;
 
 namespace MyPhotoshop
 {
-	public class LighteningFilter : PixelFilter
+	public class LighteningFilter :  PixelFilter<LighteningParametres>
 	{
-        public LighteningFilter(): base(new LighteningParametres()) {}
 
-        public override Pixel ProcessPixel(Pixel pixel, IParametres parameters) {
-            return pixel * (parameters as LighteningParametres).Coefficient;
+        public override Pixel ProcessPixel(Pixel pixel, LighteningParametres parameters) {
+            return pixel * parameters.Coefficient;
         }
 
         public override string ToString ()
